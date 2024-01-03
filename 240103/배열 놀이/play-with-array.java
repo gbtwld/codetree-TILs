@@ -12,7 +12,7 @@ public class Main {
 
         for (int i = 0; i < q; i++) {
             qCategory = sc.nextInt();
-            idx = 0;
+            idx = -1;
             if (qCategory == 3) {
                 qa = sc.nextInt();
                 qb = sc.nextInt();
