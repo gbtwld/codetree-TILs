@@ -15,7 +15,7 @@ public class Main {
             if ((i + 1) % 2 == 0) {
                 aSum += arr[i];
             }
-            if ((i + 1) % 2 == 0) {
+            if ((i + 1) % 3 == 0) {
                 bSum += arr[i];
                 bCnt++;
             }
