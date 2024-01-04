@@ -6,8 +6,14 @@ public class Main {
         String str = sc.next();
         int n = sc.nextInt();
 
-        for (int i = str.length() - 1; i >= str.length() - n; i--) {
-            System.out.print(str.charAt(i));
+        if (n > str.length()) {
+            for (int i = str.length() - 1; i >= 0; i--) {
+                System.out.print(str.charAt(i));
+            }
+        } else {    
+            for (int i = str.length() - 1; i >= str.length() - n; i--) {
+                System.out.print(str.charAt(i));
+            }
         }
     }
 }
