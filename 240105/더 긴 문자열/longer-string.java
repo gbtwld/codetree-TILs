@@ -7,8 +7,10 @@ public class Main {
 
         if (str1.length() > str2.length()) {
             System.out.printf("%s %d", str1, str1.length());
-        } else {
+        } else if (str2.length() > str1.length()) {
             System.out.printf("%s %d", str2, str2.length());
+        } else {
+            System.out.print("same");
         }
     }
 }
