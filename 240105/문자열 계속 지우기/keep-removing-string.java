@@ -17,6 +17,11 @@ public class Main {
                         }
                     }
                     if (satisfied) {
+                        if (a.length() == b.length()) {
+                            a = "";
+                            satisfied = false;
+                            break;
+                        }
                         a = a.substring(0, i) + a.substring(i + b.length(), a.length());
                         break;
                     }
