@@ -4,36 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String a = sc.next(), b = sc.next();
-        boolean satisfied = true;
 
-        while(satisfied) {
-            if (a.length() < b.length()) {
-                break;
-            }
-            for (int i = 0; i < a.length() - (b.length() - 1); i++) {
-                satisfied = true;
-                if (a.charAt(i) == b.charAt(0)) {
-                    for (int j = 1; j < b.length(); j++) {
-                        if (a.charAt(i + j) != b.charAt(j)) {
-                            satisfied = false;
-                            break;
-                        }
-                    }
-                    if (satisfied) {
-                        if (a.length() == b.length()) {
-                            a = "";
-                            satisfied = false;
-                            break;
-                        }
-                        a = a.substring(0, i) + a.substring(i + b.length(), a.length());
-                        break;
-                    }
-                } else {
-                    satisfied = false;
-                }
-            }
+        while(a.indexOf(b) != -1) {
+            a = a.substring(0, a.indexOf(b)) + a.substring(a.indexOf(b) + b.length(), a.length());
         }
-
+        
         System.out.print(a);
     }
 }
