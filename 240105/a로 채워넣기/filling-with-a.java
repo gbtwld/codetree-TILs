@@ -17,7 +17,7 @@ public class Main {
         */
         
         // 2. substring
-        String result = str.substring(0, 1) + 'a' + str.substring(2, str.length() - 2) + 'a' + str.charAt(str.length() - 1);
+        String result = str.charAt(0) + 'a' + str.substring(2, str.length() - 2) + 'a' + str.charAt(str.length() - 1);
 
         System.out.print(result);
     }
