@@ -7,6 +7,9 @@ public class Main {
         boolean satisfied = true;
 
         while(satisfied) {
+            if (a.length() < b.length()) {
+                break;
+            }
             for (int i = 0; i < a.length() - (b.length() - 1); i++) {
                 satisfied = true;
                 if (a.charAt(i) == b.charAt(0)) {
