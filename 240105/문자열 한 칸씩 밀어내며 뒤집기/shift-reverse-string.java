@@ -20,7 +20,7 @@ public class Main {
                     newStr = newStr + str.charAt(str.length() - 1 - j);
                 }
                 str = newStr;
-                System.out.print(str);
+                System.out.println(str);
             }
         }
     }
