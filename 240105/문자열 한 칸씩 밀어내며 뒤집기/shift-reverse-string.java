@@ -15,11 +15,9 @@ public class Main {
                 str = str.substring(str.length() - 1, str.length()) + str.substring(0, str.length() - 1);
                 System.out.println(str);
             } else if (n == 3) {
-                String newStr = "";
                 for (int j = 0; j < str.length(); j++) {
-                    newStr = newStr + str.charAt(str.length() - 1 - j);
+                    str = str.substring(str.length() - 1, str.length()) + str.substring(0, str.length() - 1);
                 }
-                str = newStr;
                 System.out.println(str);
             }
         }
