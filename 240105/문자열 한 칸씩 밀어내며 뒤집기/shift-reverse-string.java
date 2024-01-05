@@ -15,8 +15,8 @@ public class Main {
                 str = str.substring(str.length() - 1, str.length()) + str.substring(0, str.length() - 1);
                 System.out.println(str);
             } else if (n == 3) {
-                for (int j = 0; j < str.length(); j++) {
-                    str = str.substring(str.length() - 1, str.length()) + str.substring(0, str.length() - 1);
+                for (int j = 0; j < str.length() - 1; j++) {
+                    str = str.substring(0, j) + str.substring(str.length() - 1, str.length()) + str.substring(j, str.length() - 1);
                 }
                 System.out.println(str);
             }
