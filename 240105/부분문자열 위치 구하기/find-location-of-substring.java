@@ -7,7 +7,7 @@ public class Main {
         int result = -1;
 
         for (int i = 0; i < str1.length(); i++) {
-            if (i > str1.length() - str2.length() - 1 || result != -1) {
+            if (i > str1.length() - str2.length() || result != -1) {
                 break;
             }
             if (str1.charAt(i) == str2.charAt(0)) {
