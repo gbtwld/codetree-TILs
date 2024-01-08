@@ -31,6 +31,8 @@ public class Main {
             divide(a, c);
         } else if (b == '*') {
             prod(a, c);
+        } else {
+            System.out.print("False");
         }
     }
 }
