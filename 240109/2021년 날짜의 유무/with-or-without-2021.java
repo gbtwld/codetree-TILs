@@ -10,12 +10,14 @@ public class Main {
             } else {
                 return d <= 31;
             }
-        } else {
+        } else if (m <= 12) {
             if (m % 2 == 0) {
                 return d <= 31;
             } else {
                 return d <= 30;
             }
+        } else {
+            return false;
         }
     }
 
