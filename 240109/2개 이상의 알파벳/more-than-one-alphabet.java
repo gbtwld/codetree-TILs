@@ -2,18 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean alpha(String a) {
-        int[] arr = new int[a.length()];
+        int[] arr = new int[200];
         int cnt = 0;
-        boolean satisfied = true;
 
         for (int i = 0; i < a.length(); i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (a.charAt(i) == arr[j]) {
-                    satisfied = false;
-                    break;
-                }
-            }
-            if (satisfied) {
+            arr[(int)a.charAt(i)]++;
+        }
+        for (int i = 0; i < 200; i++) {
+            if (arr[i] != 0) {
                 cnt++;
             }
         }
