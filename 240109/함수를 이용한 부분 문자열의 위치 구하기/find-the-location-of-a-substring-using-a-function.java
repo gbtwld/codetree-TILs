@@ -15,6 +15,9 @@ public class Main {
                         break;
                     }
                 }
+                if (index != -1) {
+                    return index;
+                }
             }
         }
 
