@@ -3,40 +3,29 @@ import java.util.Scanner;
 public class Main {
     public static int[] arr = new int[10];
 
-    public static int gcd(int a, int b) {
-        int result = 0;
-
-        for (int i = 1; i < Math.max(a, b); i++) {
-            if (a % i == 0 && b % i == 0) {
-                result = i;
-            }
-        }
-
-        return result;
+    public static int gcd(int num1, int num2){
+        return num2 > 0 ? gcd(num2, num1 % num2) : num1;
     }
 
-    public static int lcm(int index) {
-        int result = 1;
+    public static int lcm(int num1, int num2){
+        return num1 * num2 / gcd(num1, num2);
+    }
 
-        if (index == 1) {
-            return (arr[0] * arr[1]) / gcd(arr[0], arr[1]);
+    public static int getLcm(int n) {
+        if (n == 1) {
+            return lcm(arr[1], arr[0]);
         }
-
-        for (int i = 0; i <= index; i++) {
-            result *= arr[i];
-        }
-
-        return  result / gcd(lcm(index - 1), arr[index]);
+        return lcm(arr[n], getLcm(n - 1));
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
+        
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-        System.out.print(lcm(n - 1));
+        System.out.print(getLcm(n - 1));
     }
 }
