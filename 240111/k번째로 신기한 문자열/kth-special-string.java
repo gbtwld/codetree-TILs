@@ -5,7 +5,7 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), k = sc.nextInt();
+        int n = sc.nextInt(), k = sc.nextInt(), cnt = 0;
         String t = sc.next();
         String[] arr = new String[n];
 
@@ -13,7 +13,7 @@ public class Main {
             boolean satisfied = true;
             String str = sc.next();
             if (str.length() < t.length()) {
-                arr[i] = "zzz";
+                continue;
             }
             for (int j = 0; j < t.length(); j++) {
                 if (t.charAt(j) != str.charAt(j)) {
@@ -22,13 +22,11 @@ public class Main {
                 }
             }
             if (satisfied) {
-                arr[i] = str;
-            } else {
-                arr[i] = "zzz";
+                arr[cnt++] = str;
             }
         }
 
-        Arrays.sort(arr);
+        Arrays.sort(arr, 0, cnt);
 
         System.out.print(arr[k - 1]);
     }
