@@ -5,9 +5,6 @@ public class Main {
         if (n == 0) {
             return arr[0];
         }
-        if (n == 1) {
-            return Math.max(arr[1], arr[0]);
-        }
 
         return Math.max(max(arr, n - 1), arr[n]);
     }
