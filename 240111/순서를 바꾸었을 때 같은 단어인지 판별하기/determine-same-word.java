@@ -14,11 +14,11 @@ public class Main {
 
         if (cArr1.length != cArr2.length) {
             satisfied = false;
-        }
-
-        for (int i = 0; i < cArr1.length; i++) {
-            if (cArr1[i] != cArr2[i]) {
-                satisfied = false;
+        } else {
+            for (int i = 0; i < cArr1.length; i++) {
+                if (cArr1[i] != cArr2[i]) {
+                    satisfied = false;
+                }
             }
         }
 
