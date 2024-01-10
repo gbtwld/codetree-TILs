@@ -12,6 +12,9 @@ public class Main {
     }
 
     public static int getLcm(int n) {
+        if (n == 0) {
+            return arr[n];
+        }
         if (n == 1) {
             return lcm(arr[1], arr[0]);
         }
