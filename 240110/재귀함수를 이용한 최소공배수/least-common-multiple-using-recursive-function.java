@@ -15,6 +15,7 @@ public class Main {
         if (n == 1) {
             return lcm(arr[1], arr[0]);
         }
+        System.out.println(n);
         return lcm(arr[n], getLcm(n - 1));
     }
 
