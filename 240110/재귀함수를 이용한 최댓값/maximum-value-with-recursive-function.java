@@ -3,14 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static int max(int[] arr, int n) {
         if (n == 1) {
-            if (arr[0] < arr[1]) {
-                return arr[1];
-            } else {
-                return arr[0];
-            }
+            return Math.max(arr[1], arr[0]);
         }
 
-        return Math.max(max(arr, n - 1), arr[n - 1]);
+        return Math.max(max(arr, n - 1), arr[n]);
     }
 
     public static void main(String[] args) {
@@ -22,6 +18,6 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        System.out.print(max(arr, n));
+        System.out.print(max(arr, n - 1));
     }
 }
