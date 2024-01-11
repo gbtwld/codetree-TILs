@@ -12,6 +12,16 @@ class Person {
 }
 
 public class Main {
+    public static boolean bigyo(String a, String b) {
+        String[] arr = new String[]{a, b};
+        Arrays.sort(arr);
+        if (arr[1] == b) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), maxNameIdx = 0;
@@ -19,7 +29,7 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             arr[i] = new Person(sc.next(), sc.next(), sc.next());
-            if (arr[maxNameIdx].name.charAt(0) < arr[i].name.charAt(0)) {
+            if (bigyo(arr[maxNameIdx].name, arr[i].name)) {
                 maxNameIdx = i;
             }
         }
