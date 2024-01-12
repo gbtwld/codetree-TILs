@@ -11,12 +11,12 @@ public class Main {
             char dir = sc.next().charAt(0);
 
             if (dir == 'R') {
-                for (int j = curIdx; j <= curIdx + x - 1; j++) {
+                for (int j = curIdx; j <= curIdx + x; j++) {
                     arr[j]++;
                 }
                 curIdx += x;
             } else {
-                for (int j = curIdx; j >= curIdx - x + 1; j--) {
+                for (int j = curIdx - 1; j >= curIdx - x; j--) {
                     arr[j]++;
                 }
                 curIdx -= x;
