@@ -11,7 +11,7 @@ public class Main {
         for (int i = 0; i < k; i++) {
             int a = sc.nextInt(), b = sc.nextInt();
 
-            for (int j = a; j <= b; j++) {
+            for (int j = a - 1; j <= b - 1; j++) {
                 arr[j]++;
             }
         }
