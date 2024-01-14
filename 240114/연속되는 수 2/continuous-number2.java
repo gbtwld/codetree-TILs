@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), cnt = 0;
+        int n = sc.nextInt(), cnt = 0, maxCnt = Integer.MIN_VALUE;
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
@@ -12,10 +12,15 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             if (i == 0 || arr[i] != arr[i - 1]) {
+                if (cnt > maxCnt) {
+                    maxCnt = cnt;
+                }
+                cnt = 1;
+            } else {
                 cnt++;
             }
         }
 
-        System.out.print(cnt);
+        System.out.print(maxCnt);
     }
 }
