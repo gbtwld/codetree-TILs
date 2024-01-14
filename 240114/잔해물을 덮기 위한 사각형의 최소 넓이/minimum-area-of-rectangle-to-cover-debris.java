@@ -21,10 +21,10 @@ public class Main {
         }
 
         int sum = 0;
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (arr[i][j] > 0) {
+                    sum++;
                     if (minX > i) {
                         minX = i;
                     }
@@ -41,6 +41,6 @@ public class Main {
             }
         }
 
-        System.out.print((maxX + 1 - minX) * (maxY + 1 - minY));
+        System.out.print(sum == 0 ? sum : (maxX + 1 - minX) * (maxY + 1 - minY));
     }
 }
