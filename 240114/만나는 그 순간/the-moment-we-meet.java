@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt(), curTime = 0, curPosition = 0, result = -1, aLast = 0, bLast = 0;
-        int[] a = new int[1000], b = new int[1000];
+        int[] a = new int[1000 * 1000], b = new int[1000 * 1000];
 
         for (int i = 0; i < n; i++) {
             char dir = sc.next().charAt(0);
