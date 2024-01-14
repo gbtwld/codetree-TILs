@@ -20,16 +20,21 @@ public class Main {
             }
         }
 
+        int sum = 0;
+
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (arr[i][j] > 0) {
                     if (minX > i) {
                         minX = i;
-                    } else if (minY > j) {
+                    }
+                    if (minY > j) {
                         minY = j;
-                    } else if (maxX < i) {
+                    } 
+                    if (maxX < i) {
                         maxX = i;
-                    } else if (maxY < j) {
+                    } 
+                    if (maxY < j) {
                         maxY = j;
                     }
                 }
