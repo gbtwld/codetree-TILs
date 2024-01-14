@@ -45,7 +45,10 @@ public class Main {
             }
         }
 
-        for (int i = 1; i < Math.min(a.length, b.length); i++) {
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] == 0 || b[i] == 0) {
+                break;
+            }
             if (a[i] == b[i]) {
                 result = i;
                 break;
