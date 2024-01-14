@@ -16,6 +16,7 @@ public class Main {
                 if (maxCnt < cnt) {
                     maxCnt = cnt;
                 }
+                cnt = 1;
             } else {
                 if (i == n - 1) {
                     cnt++;
