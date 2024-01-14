@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), m = sc.nextInt(), curTime = 0, curPosition = 0, result = -1;
+        int n = sc.nextInt(), m = sc.nextInt(), curTime = 0, curPosition = 0, result = -1, aLast = 0, bLast = 0;
         int[] a = new int[1000], b = new int[1000];
 
         for (int i = 0; i < n; i++) {
@@ -24,6 +24,7 @@ public class Main {
                 }
             }
         }
+        aLast = curTime;
         curTime = 0;
         curPosition = 0;
         for (int i = 0; i < m; i++) {
@@ -44,11 +45,9 @@ public class Main {
                 }
             }
         }
+        bLast = curTime;
 
-        for (int i = 1; i < a.length; i++) {
-            if (a[i] == 0 || b[i] == 0) {
-                break;
-            }
+        for (int i = 1; i < Math.min(aLast, bLast); i++) {
             if (a[i] == b[i]) {
                 result = i;
                 break;
