@@ -29,12 +29,7 @@ public class Main {
         }
 
         for (int i = 1; i <= curTime; i++) {
-            while (curFor == -1) {
-                if (arrA[i] < arrB[i]) {
-                    curFor = 1;
-                } else if (arrA[i] > arrB[i]) {
-                    curFor = 0;
-                }
+            if (curFor == -1 && arrA[i] == arrB[i]) {
                 continue;
             }
             if (arrA[i] > arrB[i] && curFor == 1) {
