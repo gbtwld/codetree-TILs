@@ -36,13 +36,13 @@ public class Main {
             if (xVal > 1) {
                 timeArr[timeIdx][infoArr[i][1]] = xVal - 1;
                 if (yVal == 0) {
-                    timeArr[timeIdx][infoArr[i][2]] = K;
+                    timeArr[timeIdx][infoArr[i][2]] = K + 1;
                 }
             }
             if (yVal > 1) {
                 timeArr[timeIdx][infoArr[i][2]] = yVal - 1;
                 if (xVal == 0) {
-                    timeArr[timeIdx][infoArr[i][1]] = K;
+                    timeArr[timeIdx][infoArr[i][1]] = K + 1;
                 }
             }
         }
