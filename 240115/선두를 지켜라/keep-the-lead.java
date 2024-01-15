@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), m = sc.nextInt(), curTime = 0, curPosition = 0, curFor = 0, result = 0;
+        int n = sc.nextInt(), m = sc.nextInt(), curTime = 0, curPosition = 0, curFor = -1, result = 0;
         int[] arrA = new int[1000 * 1000];
         int[] arrB = new int[1000 * 1000];
 
@@ -29,25 +29,20 @@ public class Main {
         }
 
         for (int i = 1; i <= curTime; i++) {
-            if (i == 1) {
-                if (arrA[i] > arrB[i]) {
+            while (curFor == -1) {
+                if (arrA[i] < arrB[i]) {
                     curFor = 1;
-                } else if (arrA[i] < arrB[i]) {
-                    curFor = 2;
-                } else {
-                    curFor = -1;
+                } else if (arrA[i] > arrB[i]) {
+                    curFor = 0;
                 }
+                continue;
             }
-            if (arrA[i] > arrB[i]) {
-                if (curFor == 1) {
-                    result++;
-                }
+            if (arrA[i] > arrB[i] && curFor == 1) {
                 curFor = 0;
-            } else if (arrA[i] < arrB[i]) {
-                if (curFor == 0) {
-                    result++;
-                }
+                result++;
+            } else if (arrA[i] < arrB[i] && curFor == 0) {
                 curFor = 1;
+                result++;
             }
         }
 
