@@ -11,7 +11,7 @@ public class Main {
             int v = sc.nextInt(), t = sc.nextInt();
             for (int j = 1; j <= t; j++) {
                 curPosition += v;
-                arrA[curTime + j] += curPosition + v;
+                arrA[curTime + j] = curPosition;
             }
             curTime += t;
         }
@@ -23,18 +23,31 @@ public class Main {
             int v = sc.nextInt(), t = sc.nextInt();
             for (int j = 1; j <= t; j++) {
                 curPosition += v;
-                arrB[curTime + j] += curPosition + v;
+                arrB[curTime + j] = curPosition;
             }
             curTime += t;
         }
 
         for (int i = 1; i <= curTime; i++) {
-            if (arrA[i] > arrB[i] && curFor == 1) {
+            if (i == 1) {
+                if (arrA[i] > arrB[i]) {
+                    curFor = 1;
+                } else if (arrA[i] < arrB[i]) {
+                    curFor = 2;
+                } else {
+                    curFor = -1;
+                }
+            }
+            if (arrA[i] > arrB[i]) {
+                if (curFor == 1) {
+                    result++;
+                }
                 curFor = 0;
-                result++;
-            } else if (arrA[i] < arrB[i] && curFor == 0) {
+            } else if (arrA[i] < arrB[i]) {
+                if (curFor == 0) {
+                    result++;
+                }
                 curFor = 1;
-                result++;
             }
         }
 
