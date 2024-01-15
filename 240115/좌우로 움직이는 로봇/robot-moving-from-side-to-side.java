@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt(), timeA = 0, timeB = 0, result = 0;
-        int[] arrA = new int[1000000], arrB = new int[1000000];
+        int[] arrA = new int[1000001], arrB = new int[1000001];
 
         for (int i = 0; i < n; i++) {
             int t = sc.nextInt();
