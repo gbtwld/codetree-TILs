@@ -14,7 +14,9 @@ public class Main {
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == 'L') {
                 dir = (dir + 3) % 4;
-            } else {
+            } else if (input.charAt(i) == 'R') {
+                dir = (dir + 1) % 4;
+            }else {
                 nx = nx + dx[dir];
                 ny = ny + dy[dir];
             }
