@@ -34,7 +34,7 @@ public class Main {
             int nx = r + dx[d], ny = c + dy[d];
 
             if (!inRange(nx, ny)) {
-                d -= 3;
+                d = 3 - d;
             } else {
                 r = nx;
                 c = ny;
