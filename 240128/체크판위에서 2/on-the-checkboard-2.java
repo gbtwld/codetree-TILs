@@ -17,7 +17,10 @@ public class Main {
         2. 오른쪽, 아래쪽으로 한칸 이상 떨어진 곳으로 이동해야함
         3. 시작, 도착 지점 제외 2곳만 지나야함
         */
-
+        if (arr[0][0] == arr[r - 1][c - 1]) {
+            System.out.print(0);
+            return;
+        }
         for (int i = 1; i < r - 1; i++) {
             for (int j = 1; j < c - 1; j++) {
                 if (arr[i][j] != arr[0][0]) {
