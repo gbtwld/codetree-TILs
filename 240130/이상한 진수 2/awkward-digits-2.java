@@ -9,6 +9,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         int maxVal = Integer.MIN_VALUE;
+
+        if (a.equals("1")) {
+            System.out.print(0);
+            return;
+        } else if (a.equals("0")) {
+            System.out.print(1);
+            return;
+        }
         
         for (int i = 1; i < a.length(); i++) {
             String b = a;
