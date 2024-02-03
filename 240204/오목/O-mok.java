@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
 public class Main {
+    public static int n = 19;
+    public static int[] dx = new int[]{0, 1, 1, 1, 0, -1, -1, -1};
+    public static int[] dy = new int[]{1, 1, 0, -1, -1, -1, 0, 1};
+
+    public static boolean inRange(int x, int y) {
+        return (x >= 0 && y >= 0 && x < n && y < n);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = 19;
         int[][] arr = new int[n][n];
 
         for (int i = 0; i < n; i++) {
@@ -12,59 +19,36 @@ public class Main {
             }
         }
 
-        // 대각선 / => i < n - 4 && j > 3
-        for (int i = 0; i < n - 4; i++) {
-            for (int j = 4; j < n; j++) {
-                if (arr[i][j] == 1 && arr[i + 1][j - 1] == 1 && arr[i + 2][j - 2] == 1 && arr[i + 3][j - 3] == 1 && arr[i + 4][j - 4] == 1) {
-                    System.out.println(1);
-                    System.out.printf("%d %d", i + 2 + 1, j - 2 + 1);
-                    return;
-                } else if (arr[i][j] == 2 && arr[i + 1][j - 1] == 2 && arr[i + 2][j - 2] == 2 && arr[i + 3][j - 3] == 2 && arr[i + 4][j - 4] == 2) {
-                    System.out.println(2);
-                    System.out.printf("%d %d", i + 2 + 1, j - 2 + 1);
-                    return;
-                }
-            }
-        }
-        // 대각선 \ => i < n - 4 && j < n - 4
-        for (int i = 0; i < n - 4; i++) {
-            for (int j = 0; j < n - 4; j++) {
-                if (arr[i][j] == 1 && arr[i + 1][j + 1] == 1 && arr[i + 2][j + 2] == 1 && arr[i + 3][j + 3] == 1 && arr[i + 4][j + 4] == 1) {
-                    System.out.println(1);
-                    System.out.printf("%d %d", i + 2 + 1, j + 2 + 1);
-                    return;
-                } else if (arr[i][j] == 2 && arr[i + 1][j + 1] == 2 && arr[i + 2][j + 2] == 2 && arr[i + 3][j + 3] == 2 && arr[i + 4][j + 4] == 2) {
-                    System.out.println(2);
-                    System.out.printf("%d %d", i + 2 + 1, j + 2 + 1);
-                    return;
-                }
-            }
-        }
-        // 가로 => i < n && j < n - 4
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n - 4; j++) {
-                if (arr[i][j] == 1 && arr[i][j + 1] == 1 && arr[i][j + 2] == 1 && arr[i][j + 3] == 1 && arr[i][j + 4] == 1) {
-                    System.out.println(1);
-                    System.out.printf("%d %d", i + 1, j + 2 + 1);
-                    return;
-                } else if (arr[i][j] == 2 && arr[i][j + 1] == 2 && arr[i][j + 2] == 2 && arr[i][j + 3] == 2 && arr[i][j + 4] == 2) {
-                    System.out.println(2);
-                    System.out.printf("%d %d", i + 1, j + 2 + 1);
-                    return;
-                }
-            }
-        }
-        // 세로 => i < n - 4 && j < n
-        for (int i = 0; i < n - 4; i++) {
             for (int j = 0; j < n; j++) {
-                if (arr[i][j] == 1 && arr[i + 1][j] == 1 && arr[i + 2][j] == 1 && arr[i + 3][j] == 1 && arr[i + 4][j] == 1) {
-                    System.out.println(1);
-                    System.out.printf("%d %d", i + 2 + 1, j + 1);
-                    return;
-                } else if (arr[i][j] == 2 && arr[i + 1][j] == 2 && arr[i + 2][j] == 2 && arr[i + 3][j] == 2 && arr[i + 4][j] == 2) {
-                    System.out.println(2);
-                    System.out.printf("%d %d", i + 2 + 1, j + 1);
-                    return;
+                if (arr[i][j] == 0) continue;
+
+                for (int dir = 0; dir < 8; dir++) {
+                    int cnt = 1;
+                    int curX = i;
+                    int curY = j;
+
+                    while (true) {
+                        int nx = curX + dx[dir];
+                        int ny = curY + dy[dir];
+                        
+                        if (!inRange(nx, ny)) {
+                            break;
+                        }
+
+                        if (arr[curX][curY] != arr[nx][ny]) {
+                            break;
+                        }
+
+                        cnt++;
+                        if (cnt == 5) {
+                            System.out.println(arr[curX][curY]);
+                            System.out.printf("%d %d", curX - dx[dir] + 1, curY - dy[dir] + 1);
+                            return;
+                        }
+                        curX = nx;
+                        curY = ny;
+                    }
                 }
             }
         }
