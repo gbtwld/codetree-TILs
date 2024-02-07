@@ -5,6 +5,7 @@ public class Main {
     public static boolean isBeautiful(int a, int b, int c, int[] B) {
         int[] sortedArr = new int[]{a, b, c};
         Arrays.sort(sortedArr);
+        Arrays.sort(B);
         
         for (int i = 0; i < B.length; i++) {
             if (sortedArr[i] != B[i]) {
@@ -19,7 +20,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt(), cnt = 0;
         int[] arrA = new int[n], arrB = new int[m];
-        Arrays.sort(arrB);
 
         for (int i = 0; i < n; i++) {
             arrA[i] = sc.nextInt();
