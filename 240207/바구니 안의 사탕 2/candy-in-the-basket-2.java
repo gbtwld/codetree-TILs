@@ -11,6 +11,14 @@ public class Main {
             arr[idx] += candy;
         }
 
+        if (k > 50) {
+            int sum = 0;
+            for (int i = 0; i <= 100; i++) {
+                sum += arr[i];
+            }
+            maxValue = sum;
+        }
+
         for (int i = k; i <= 100 - k; i++) {
             int sum = 0;
             for (int j = i - k; j <= i + k; j++) {
