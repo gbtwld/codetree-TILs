@@ -2,8 +2,11 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
-    public static boolean isBeautiful(int a, int b, int c, int[] B) {
-        int[] sortedArr = new int[]{a, b, c};
+    public static boolean isBeautiful(int idx, int[] A, int[] B) {
+        int[] sortedArr = new int[B.length];
+        for (int i = 0; i < B.length; i++) {
+            sortedArr[i] = A[idx + i];
+        }
         Arrays.sort(sortedArr);
         Arrays.sort(B);
         
@@ -29,7 +32,7 @@ public class Main {
         }
 
         for (int i = 0; i < n - m + 1; i++) {
-            if (isBeautiful(arrA[i], arrA[i + 1], arrA[i + 2], arrB)) {
+            if (isBeautiful(i ,arrA, arrB)) {
                 cnt++;
             }
         }
