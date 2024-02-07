@@ -8,7 +8,7 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             int candy = sc.nextInt(), idx = sc.nextInt();
-            arr[idx] = candy;
+            arr[idx] += candy;
         }
 
         for (int i = k; i <= 100 - k; i++) {
