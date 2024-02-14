@@ -17,12 +17,14 @@ public class Main {
                 for (int k = 0; k < 4; k++) {
                     for (int l = k + 1; k < 5; k++) {
                         if (k == i || k == j || l == i || l == j) continue;
-                        if (arr[i] == arr[j] || arr[k] == arr[l]) continue;
-                        isPossible = true;
 
                         int a = arr[i] + arr[j];
                         int b = arr[k] + arr[l];
                         int c = sum - (a + b);
+
+                        if (a == b && b == c) continue;
+                        isPossible = true;
+
 
                         int maxValue = Math.max(a, Math.max(b, c));
                         int minValue = Math.min(a, Math.min(b, c));
