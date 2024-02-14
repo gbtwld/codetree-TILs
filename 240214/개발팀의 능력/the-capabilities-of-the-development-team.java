@@ -15,7 +15,7 @@ public class Main {
         for (int i = 0; i < 4; i++) {
             for (int j = i + 1; j < 5; j++) {
                 for (int k = 0; k < 4; k++) {
-                    for (int l = k + 1; k < 5; k++) {
+                    for (int l = k + 1; l < 5; l++) {
                         if (k == i || k == j || l == i || l == j) continue;
 
                         int a = arr[i] + arr[j];
