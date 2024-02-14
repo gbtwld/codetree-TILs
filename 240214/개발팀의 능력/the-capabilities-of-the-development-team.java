@@ -22,7 +22,7 @@ public class Main {
                         int b = arr[k] + arr[l];
                         int c = sum - (a + b);
 
-                        if (a == b && b == c) continue;
+                        if (a == b || b == c || a == c) continue;
                         isPossible = true;
 
 
