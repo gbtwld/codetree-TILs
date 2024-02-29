@@ -12,12 +12,14 @@ public class Main {
         }
 
         for (int i = 0; i < n; i++) {
-            for (int j = i - 1; j >= 0; j--) {
+            for (int j = i - 1; j >= i - k; j--) {
+                if (j < 0) break;
+                
                 if (arr[j] == arr[i]) {
                     result = Math.max(result, arr[i]);
                 }
             }
-            for (int j = i + 1; j <= i + 3; j++) {
+            for (int j = i + 1; j <= i + k; j++) {
                 if (j == n) break;
                 
                 if (arr[j] == arr[i]) {
