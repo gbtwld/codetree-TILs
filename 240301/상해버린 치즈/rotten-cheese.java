@@ -63,10 +63,15 @@ public class Main {
             if (!cheese[i]) continue;
 
             int cnt = 0;
+            int[] eatPersonArr = new int[n];
+
             for (int j = 0; j < d; j++) {
                 if (arr1[j][1] == i + 1) {
-                    cnt++;
+                    eatPersonArr[arr1[j][0] - 1]++;
                 }
+            }
+            for (int k = 0; k < n; k++) {
+                if (eatPersonArr[k] > 0) cnt++;
             }
             maxPatient = Math.max(maxPatient, cnt);
         }
