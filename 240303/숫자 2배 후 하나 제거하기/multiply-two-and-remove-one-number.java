@@ -16,15 +16,22 @@ public class Main {
             for (int j = 0; j < n; j++) {
                 if (j == i) continue;
 
-                int sum = 0;
-                
-                for (int k = 0; k < n - 1; k++) {
+                int[] remainArr = new int[n - 1];
+                int idx = 0;
+
+                for (int k = 0; k < n; k++) {
                     if (k == j) continue;
 
-                    sum += Math.abs(arr[k] - arr[k + 1]);
+                    remainArr[idx++] = arr[k];
                 }
 
-                ans = Math.min(ans, sum);
+                int sum = 0;
+
+                for (int k = 0; k < n - 2; k++) {
+                    sum += Math.abs(remainArr[k] - remainArr[k + 1]);
+                }
+
+                ans = Math.min(sum, ans);
             }
 
             arr[i] /= 2;
