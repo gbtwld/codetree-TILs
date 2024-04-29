@@ -12,7 +12,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int cnt = 0;
         int[][] arr = new int[3][3];
-        List<HashSet<Integer>> visited = new ArrayList<>();
+        List<List<Integer>> visited = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
             int num = sc.nextInt();
@@ -33,7 +33,7 @@ public class Main {
                 Collections.sort(k);
                 if (!visited.contains(k)) {
                     cnt++;
-                    visited.add(hashSet);
+                    visited.add(k);
                 }
             }
             if (checkTwo(arr[0][i], arr[1][i], arr[2][i])) {
@@ -45,7 +45,7 @@ public class Main {
                 Collections.sort(k);
                 if (!visited.contains(k)) {
                     cnt++;
-                    visited.add(hashSet);
+                    visited.add(k);
                 }
             }
         }
@@ -59,7 +59,7 @@ public class Main {
             Collections.sort(k);
             if (!visited.contains(k)) {
                 cnt++;
-                visited.add(hashSet);
+                visited.add(k);
             }
         }
         if (checkTwo(arr[0][2], arr[1][1], arr[2][0])) {
@@ -71,7 +71,7 @@ public class Main {
             Collections.sort(k);
             if (!visited.contains(k)) {
                 cnt++;
-                visited.add(hashSet);
+                visited.add(k);
             }
         }
 
