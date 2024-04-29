@@ -35,8 +35,8 @@ public class Main {
             maxY = Math.max(maxY, y[i]);
         }
 
-        for (int i = minX + 1; i < maxX; i += 2) {
-            for (int j = minY + 1; j < maxY; j += 2) {
+        for (int i = minX - 1; i <= maxX + 1; i += 2) {
+            for (int j = minY - 1; j <= maxY + 1; j += 2) {
                 int cnt = countMax(x, y, i, j);
 
                 result = Math.min(result, cnt);
