@@ -3,8 +3,8 @@ import java.io.*;
 
 public class Main {
     public static boolean check(char[] arr, int len) {
-        for (int i = 0; i <= arr.length - len * 2; i++) {
-            for (int j = i + len; j <= arr.length - len; j++) {
+        for (int i = 0; i <= arr.length - len; i++) {
+            for (int j = i + 1; j <= arr.length - len; j++) {
                 boolean satisfied = true;
                 for (int k = 0; k < len; k++) {
                     if (arr[i + k] != arr[j + k]) {
