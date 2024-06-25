@@ -3,13 +3,13 @@ import java.io.*;
 
 public class Main {
     public static boolean isPossible(int a, int[] arr, int k) {
-        int dist = 1;
+        int dist = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] <= a) {
-                if (dist > k) {
+                if (dist >= k) {
                     return false;
                 }
-                dist = 1;
+                dist = 0;
             } else {
                 dist++;
             }
