@@ -30,7 +30,7 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        for (int i = Math.max(arr[0], arr[n - 1]); i <= n; i++) {
+        for (int i = Math.max(arr[0], arr[n - 1]); i <= 100; i++) {
             if (isPossible(i, arr, k)) {
                 sb.append(i);
                 break;
