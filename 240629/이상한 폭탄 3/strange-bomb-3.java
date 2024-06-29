@@ -11,7 +11,7 @@ public class Main {
         int k = Integer.parseInt(st.nextToken());
 
         int maxNum = 0;
-        int maxVal = Integer.MIN_VALUE;
+        int maxVal = 0;
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
@@ -35,7 +35,7 @@ public class Main {
         }
 
         for (int i = 0; i <= 1000000; i++) {
-            if (result[i] >= maxVal) {
+            if (result[i] >= maxVal && result[i] > 0) {
                 maxVal = result[i];
                 maxNum = i;
             }
