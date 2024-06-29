@@ -14,13 +14,19 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        int[] result = new int[n];
         for (int i = 1; i <= arr[0] - 1; i++) {
+            int[] result = new int[n];
             result[0] = i;
             boolean satisfied = true;
             for (int j = 1; j < n; j++) {
                 int curVal = arr[j - 1] - result[j - 1];
-                if (curVal == result[j - 1]) {
+
+                List<Integer> list = new ArrayList<>();
+                for (int a : result) {
+                    list.add(a);
+                }
+
+                if (list.contains(curVal) || curVal <= 0) {
                     satisfied = false;
                     break;
                 }
