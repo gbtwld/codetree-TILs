@@ -22,7 +22,7 @@ public class Main {
             int curIdx = -1;
             for (int j = 0; j < n; j++) {
                 if (arr[j] == i) {
-                    if (curIdx != -1) {
+                    if (curIdx != -1 && j - curIdx <= k) {
                         if (result[i] > 0) {
                             result[i]++;
                         } else {
@@ -36,6 +36,7 @@ public class Main {
 
         for (int i = 0; i <= 1000000; i++) {
             if (result[i] >= maxVal && result[i] > 0) {
+                System.out.println(i + " : " + result[i]);
                 maxVal = result[i];
                 maxNum = i;
             }
