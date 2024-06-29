@@ -22,21 +22,20 @@ public class Main {
             int curIdx = -1;
             for (int j = 0; j < n; j++) {
                 if (arr[j] == i) {
-                    if (curIdx == -1) {
-                        curIdx = j;
-                    } else if (j - curIdx <= k) {
-                        if (result[i] == 0) {
-                            result[i] += 2;
-                        } else {
+                    if (curIdx != -1) {
+                        if (result[i] > 0) {
                             result[i]++;
+                        } else {
+                            result[i] += 2;
                         }
                     }
+                    curIdx = j;
                 }
             }
         }
 
         for (int i = 0; i <= 1000000; i++) {
-            if (result[i] > maxVal) {
+            if (result[i] >= maxVal) {
                 maxVal = result[i];
                 maxNum = i;
             }
