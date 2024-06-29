@@ -36,7 +36,6 @@ public class Main {
 
         for (int i = 0; i <= 1000000; i++) {
             if (result[i] >= maxVal && result[i] > 0) {
-                System.out.println(i + " : " + result[i]);
                 maxVal = result[i];
                 maxNum = i;
             }
