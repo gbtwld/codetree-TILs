@@ -2,18 +2,20 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static int getMaxVal(int[] arr) {
-        int maxVal = Integer.MIN_VALUE;
+    public static boolean isSatisfied(int[] arr, int max, int m) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+            if (m == 1 && sum + arr[i] > max) return false;
 
-            if (arr[i] == 0 || i == arr.length - 1) {
-                maxVal = Math.max(maxVal, sum);
-                sum = 0;
+            if (sum + arr[i] > max) {
+                sum = arr[i];
+                m -= 1;
+            } else {
+                sum += arr[i];
             }
         }
-        return maxVal;
+
+        return true;
     }
 
     public static void main(String[] args) throws Exception {
@@ -21,6 +23,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         int minVal = Integer.MAX_VALUE;
+        int maxVal = Integer.MIN_VALUE;
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -30,26 +33,15 @@ public class Main {
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
+            maxVal = Math.max(maxVal, arr[i]);
         }
 
-        for (int i = 1; i <= n + m - 5; i++) {
-            for (int j = i + 2; j <= n + m - 3; j++) {
-                int[] result = new int[n + (m - 1)];
-                for (int k = 0; k < n + m - 1; k++) {
-                    if (k < i) {
-                        result[k] = arr[k];
-                    } else if (k > i && k < j) {
-                        result[k] = arr[k - 1];
-                    } else if (k > j) {
-                        result[k] = arr[k - 2];
-                    } else {
-                        result[k] = 0;
-                    }
-                }
-                minVal = Math.min(minVal, getMaxVal(result));
+        for (int i = maxVal; i < 10000; i++) {
+            if (isSatisfied(arr, i, m)) {
+                sb.append(i);
+                break;
             }
         }
-        sb.append(minVal);
         System.out.print(sb);
     }
 }
