@@ -29,10 +29,19 @@ public class Main {
             for (int j = 0; j < i; j++) {
                 if (j % 2 == 0) {
                     curArr[0]++;
+                    if (curArr[0] > curArr[1]) {
+                        int tmp = curArr[0];
+                        curArr[0] = curArr[1];
+                        curArr[1] = tmp;
+                    }
                 } else {
                     curArr[n - 1]--;
+                    if (curArr[n - 1] < curArr[n - 2]) {
+                        int tmp = curArr[n - 1];
+                        curArr[n - 1] = curArr[n - 2];
+                        curArr[n - 2] = tmp;
+                    }
                 }
-                Arrays.sort(curArr);
             }
 
             if (curArr[n - 1] - curArr[0] <= k) {
