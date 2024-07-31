@@ -27,6 +27,11 @@ public class Main {
         for (int i = p - 1; i < m; i++) {
             reader[writer[i] - 'A'] = true;
         }
+        for (int i = p - 2; i >= 0; i--) {
+            if (unreadCnt[i] == unreadCnt[p - 1]) {
+                reader[writer[i] - 'A'] = true;
+            }
+        }
         for (int i = 0; i < m; i++) {
             if (!reader[i]) {
                 sb.append((char)('A' + i) + " ");
