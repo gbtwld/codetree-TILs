@@ -32,7 +32,7 @@ public class Main {
                 reader[writer[i] - 'A'] = true;
             }
         }
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < n; i++) {
             if (!reader[i]) {
                 sb.append((char)('A' + i) + " ");
             }
