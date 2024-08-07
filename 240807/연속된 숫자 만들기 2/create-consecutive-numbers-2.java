@@ -18,10 +18,16 @@ public class Main {
                 break;
             }
 
-            if (Math.abs(arr[1] - arr[2]) == 1) {
-                arr[2] = arr[0] + 1;
-            } else {
+            if (arr[1] - arr[0] == 2) {
+                arr[2] = arr[1] - 1;
+            } else if (arr[2] - arr[1] == 2) {
                 arr[0] = arr[1] + 1;
+            } else {
+                if (arr[1] - arr[0] == 1) {
+                    arr[0] = arr[1] + (arr[2] - arr[1]) / 2;
+                } else {
+                    arr[2] = arr[0] + (arr[1] - arr[0]) / 2;
+                }
             }
 
             Arrays.sort(arr);
