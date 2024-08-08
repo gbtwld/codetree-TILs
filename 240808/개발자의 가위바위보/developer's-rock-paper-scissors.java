@@ -15,23 +15,30 @@ public class Main {
         }
 
         int maxWin = Integer.MIN_VALUE;
-        for (int i = 1; i <= 3; i++) {
-            for (int j = 1; j <= 3; j++) {
-                if (i == j) continue;
-
-                for (int k = 1; k <= 3; k++) {
-                    if (i == k || j == k) continue;
-                    
-                    int win = 0;
-                    for (int l = 0; l < n; l++) {
-                        if ((arr[l][0] == i && arr[l][1] == j) || (arr[l][0] == j && arr[l][1] == k) || (arr[l][0] == k && arr[l][1] == i)) {
-                            win++;
-                        }
-                    }
-                    maxWin = Math.max(maxWin, win);
-                }
+        // 1 => 2 => 3 => 1
+        int win = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i][0] == 1 && arr[i][1] == 2) {
+                win++;
+            } else if (arr[i][0] == 2 && arr[i][1] == 3) {
+                win++;
+            } else if (arr[i][0] == 3 && arr[i][1] == 1) {
+                win++;
             }
         }
+        maxWin = Math.max(maxWin, win);
+        // 1 => 3 => 2 => 1
+        win = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i][0] == 1 && arr[i][1] == 3) {
+                win++;
+            } else if (arr[i][0] == 3 && arr[i][1] == 2) {
+                win++;
+            } else if (arr[i][0] == 2 && arr[i][1] == 1) {
+                win++;
+            }
+        }
+        maxWin = Math.max(maxWin, win);
 
         sb.append(maxWin);
         System.out.println(sb);
