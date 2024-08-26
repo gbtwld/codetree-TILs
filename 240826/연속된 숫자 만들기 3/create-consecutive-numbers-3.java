@@ -21,18 +21,29 @@ public class Main {
 
             if (arr[0] + 1 == arr[1]) {
                 arr[0] = arr[1] + 1;
+                int tmp = arr[0];
+                arr[0] = arr[1];
+                arr[1] = tmp;
             } else if (arr[1] + 1 == arr[2]) {
                 arr[2] = arr[1] - 1;
+                int tmp = arr[1];
+                arr[1] = arr[2];
+                arr[2] = tmp;
             } else {
                 if (arr[1] - arr[0] > arr[2] - arr[1]) {
                     arr[2] = arr[1] - 1;
+                    int tmp = arr[1];
+                    arr[1] = arr[2];
+                    arr[2] = tmp;
                 } else {
                     arr[0] = arr[1] + 1;
+                    int tmp = arr[0];
+                    arr[0] = arr[1];
+                    arr[1] = tmp;
                 }
             }
 
             cnt++;
-            Arrays.sort(arr);
         }
 
         sb.append(cnt);
