@@ -17,19 +17,24 @@ public class Main {
 
         int minDiff = Integer.MAX_VALUE;
         int idx = -1;
+        int targetCnt = 0;
         for (int i = 0; i < n; i++) {
             if (arr[i] == minVal) continue;
 
             if (arr[i] - minVal < minDiff) {
                 minDiff = arr[i] - minVal;
                 idx = i;
-            } else {
-                System.out.println(-1);
-                return;
+                targetCnt = 1;
+            } else if (arr[i] - minVal == minDiff) {
+                targetCnt++;
             }
         }
 
-        sb.append(idx + 1);
+        if (targetCnt > 1) {
+            sb.append(-1);
+        } else {
+            sb.append(idx + 1);
+        }
         System.out.println(sb);
     }
 }
