@@ -26,13 +26,13 @@ public class Main {
         }
 
         if (lx == bx) {
-            if (lx == rx) {
+            if (lx == rx && (ly < ry && ry < by || by < ry && ry < ly)) {
                 sb.append(Math.abs(ly - by) + 1);
             } else {
                 sb.append(Math.abs(ly - by) - 1);
             }
         } else if (ly == by) {
-            if (ly == ry) {
+            if (ly == ry && (lx < rx && rx < bx || bx < rx && rx < lx)) {
                 sb.append(Math.abs(lx - bx) + 1);
             } else {
                 sb.append(Math.abs(lx - bx) - 1);
