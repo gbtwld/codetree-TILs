@@ -6,7 +6,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int lx = 0, ly = 0, bx = 0, by = 0;
+        int lx = 0, ly = 0, bx = 0, by = 0, rx = 0, ry = 0;
         char[][] arr = new char[10][10];
         for (int i = 0; i < 10; i++) {
             String input = br.readLine();
@@ -18,12 +18,19 @@ public class Main {
                 } else if (arr[i][j] == 'B') {
                     bx = j;
                     by = i;
+                } else if (arr[i][j] == 'R') {
+                    rx = j;
+                    ry = i;
                 }
             }
         }
 
         if (lx == bx || ly == by) {
-            sb.append(Math.abs(lx - bx) + Math.abs(ly - by));
+            if (lx == rx || ly == ry) {
+                sb.append(Math.abs(lx - bx) + Math.abs(ly - by) + 1);
+            } else {
+                sb.append(Math.abs(lx - bx) + Math.abs(ly - by));
+            }
         } else {
             sb.append(Math.abs(lx - bx) + Math.abs(ly - by) - 1);
         }
