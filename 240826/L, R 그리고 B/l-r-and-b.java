@@ -25,11 +25,17 @@ public class Main {
             }
         }
 
-        if (lx == bx || ly == by) {
-            if (lx == rx || ly == ry) {
-                sb.append(Math.abs(lx - bx) + Math.abs(ly - by) + 1);
+        if (lx == bx) {
+            if (lx == rx) {
+                sb.append(Math.abs(ly - by) + 1);
             } else {
-                sb.append(Math.abs(lx - bx) + Math.abs(ly - by));
+                sb.append(Math.abs(ly - by) - 1);
+            }
+        } else if (ly == by) {
+            if (ly == ry) {
+                sb.append(Math.abs(lx - bx) + 1);
+            } else {
+                sb.append(Math.abs(lx - bx) - 1);
             }
         } else {
             sb.append(Math.abs(lx - bx) + Math.abs(ly - by) - 1);
