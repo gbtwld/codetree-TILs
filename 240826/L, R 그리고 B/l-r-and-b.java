@@ -22,7 +22,11 @@ public class Main {
             }
         }
 
-        sb.append(Math.abs(lx - bx) + Math.abs(ly - by) - 1);
+        if (lx == bx || ly == by) {
+            sb.append(Math.abs(lx - bx) + Math.abs(ly - by));
+        } else {
+            sb.append(Math.abs(lx - bx) + Math.abs(ly - by) - 1);
+        }
         System.out.println(sb);
     }
 }
