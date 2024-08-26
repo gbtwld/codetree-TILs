@@ -16,7 +16,7 @@ public class Main {
         }
 
         int minDiff = Integer.MAX_VALUE;
-        int idx = -1;
+        int idx = -2;
         int targetCnt = 0;
         for (int i = 0; i < n; i++) {
             if (arr[i] == minVal) continue;
